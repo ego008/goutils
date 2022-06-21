@@ -5,6 +5,7 @@ go 1.18
 require (
 	github.com/goccy/go-json v0.9.7
 	github.com/json-iterator/go v1.1.12
+	golang.org/x/net v0.0.0-20220617184016-355a448f1bc9
 )
 
 require (
