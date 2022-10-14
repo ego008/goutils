@@ -9,8 +9,8 @@ type (
 )
 
 func (l StrLst) Has(x string) bool {
-	for _, i := range l {
-		if i == x {
+	for i := 0; i < len(l); i++ {
+		if l[i] == x {
 			return true
 		}
 	}
@@ -19,20 +19,20 @@ func (l StrLst) Has(x string) bool {
 
 func (l StrLst) Sort() {
 	var s []string
-	for _, i := range l {
-		s = append(s, i)
+	for i := 0; i < len(l); i++ {
+		s = append(s, l[i])
 	}
 
 	sort.Strings(s) // 升序
 
-	for i, v := range s {
-		l[i] = v
+	for i := 0; i < len(s); i++ {
+		l[i] = s[i]
 	}
 }
 
 func (l IntLst) Has(x int) bool {
-	for _, i := range l {
-		if i == x {
+	for i := 0; i < len(l); i++ {
+		if l[i] == x {
 			return true
 		}
 	}
@@ -41,28 +41,28 @@ func (l IntLst) Has(x int) bool {
 
 func (l IntLst) Sort() {
 	var s []int
-	for _, i := range l {
-		s = append(s, int(i))
+	for i := 0; i < len(l); i++ {
+		s = append(s, l[i])
 	}
 
 	sort.Ints(s) // 升序
 	// sort.Sort(sort.Reverse(sort.IntSlice(s))) // 降序
 
-	for i, v := range s {
-		l[i] = v
+	for i := 0; i < len(s); i++ {
+		l[i] = s[i]
 	}
 }
 
 func (l IntLst) ReverseSort() {
 	var s []int
-	for _, i := range l {
-		s = append(s, int(i))
+	for i := 0; i < len(l); i++ {
+		s = append(s, l[i])
 	}
 
 	sort.Sort(sort.Reverse(sort.IntSlice(s))) // 降序
 
-	for i, v := range s {
-		l[i] = v
+	for i := 0; i < len(s); i++ {
+		l[i] = s[i]
 	}
 }
 
