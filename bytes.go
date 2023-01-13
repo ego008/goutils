@@ -56,3 +56,9 @@ func Bconcat(slices [][]byte) []byte {
 	}
 	return tmp
 }
+
+func CloneBytes(src []byte) []byte {
+	dst := make([]byte, len(src))
+	copy(dst, src)
+	return dst
+}
