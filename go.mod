@@ -3,6 +3,7 @@ module github.com/ego008/goutils
 go 1.18
 
 require (
+	github.com/cespare/xxhash/v2 v2.2.0
 	github.com/goccy/go-json v0.9.7
 	github.com/json-iterator/go v1.1.12
 	golang.org/x/net v0.0.0-20220617184016-355a448f1bc9
