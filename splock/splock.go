@@ -1,35 +1,37 @@
 package splock
 
-import "sync"
-
 // -- simpleLock
+
 type SL struct {
 	key  string
 	lock bool
 }
 
 type SimpleLock struct {
-	mp sync.Map
+	mp map[string]*SL
 }
 
 func (s *SimpleLock) Init(k string) *SL {
-	if v, ok := s.mp.Load(k); ok {
-		return v.(*SL)
+	if s.mp == nil {
+		s.mp = map[string]*SL{}
+	}
+	if v, ok := s.mp[k]; ok {
+		return v
 	}
 
 	sl := SL{key: k}
-	s.mp.Store(k, &sl)
+	s.mp[k] = &sl
 	return &sl
 }
 
-func (sl *SL) IsLocked() bool {
-	return sl.lock
+func (l *SL) IsLocked() bool {
+	return l.lock
 }
 
-func (sl *SL) Lock() {
-	sl.lock = true
+func (l *SL) Lock() {
+	l.lock = true
 }
 
-func (sl *SL) UnLock() {
-	sl.lock = false
+func (l *SL) UnLock() {
+	l.lock = false
 }
