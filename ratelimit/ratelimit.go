@@ -21,7 +21,7 @@ import (
 //	fmt.Println(bit[8:32]) // each hour, new in front
 //	fmt.Println(bit[32:]) // each quarter, new in front
 
-// example:
+//  Usage:
 // maxEntry, rateLimitDay, rateLimitHour := 1000, 2000, 100
 // limiter = NewCache(maxEntry, rateLimitDay, rateLimitHour)
 // userIp := getUserIpFromReq(httpRequest)
