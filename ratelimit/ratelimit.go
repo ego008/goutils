@@ -21,22 +21,22 @@ import (
 //	fmt.Println(bit[8:32]) // each hour, new in front
 //	fmt.Println(bit[32:]) // each quarter, new in front
 
-//  Usage:
-// maxEntry, rateLimitDay, rateLimitHour := 1000, 2000, 100
-// limiter = NewCache(maxEntry, rateLimitDay, rateLimitHour)
-// userIp := getUserIpFromReq(httpRequest)
-// cntDay, cntHour, underRateLimit := limiter.Incr(uint64(time.Now().UTC().Unix()), userIp)
+// Usage:
+//	maxEntry, rateLimitDay, rateLimitHour := 1000, 2000, 100
+//	limiter = NewCache(maxEntry, rateLimitDay, rateLimitHour)
+//	userIp := getUserIpFromReq(httpRequest)
+//	cntDay, cntHour, underRateLimit := limiter.Incr(uint64(time.Now().UTC().Unix()), userIp)
 //
 //	if !underRateLimit {
 //	    log.Printf("%s over rate limit, current D[%d] H[%d] \n", userIp, cntDay, cntHour)
 //	}
 //
-// // tools
-// byteData := limiter.Dump()
-// // save byteData in db or disk
-// limiter.Load(byteData) // load byteData to limiter
-// // do every n hour
-// limiter.RemoveExpiredEntry()
+//	// tools
+//	byteData := limiter.Dump()
+//	// save byteData in db or disk
+//	limiter.Load(byteData) // load byteData to limiter
+//	// do every n hour
+//	limiter.RemoveExpiredEntry()
 
 const (
 	hourSeconds    = 3600 // 60*60
